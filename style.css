@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+*,
+*::before,
+*::after {
+  font-family: 'Cairo', sans-serif;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --app-main-color: rgb(58, 108, 244);
+  --app-complement-color:#D9C50B;
+  --app-accent-color: rgb(112, 46, 133);
+}
+header a {
+  text-decoration: none;
+  color: var(--app-main-color);
+  transition: color 0.3s ease;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+header a:hover {
+  color: var(--app-accent-color);
+}
+
+header {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 3rem;
+  position: sticky;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin: 0px 1em;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 6rem 7rem;
+  position: relative;
+}
+
+.animation img {
+  width: 30em;
+  height: auto;
+}
+
+.intro h2{
+    color: white;
+    font: 700;
+}
+
+.title{
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--app-complement-color);
+}
+
+.intro h3{
+    color: white;
+    font-size: 2rem;
+}
+
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  }
+  80% {
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(30deg);
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 15;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.silver {
+  background: linear-gradient(to bottom, #1b3060, #173782, #062a7c);
+}
+
+.silver::after {
+  content: '';
+  top: 0;
+  transform: translateX(100%) rotate(30deg);
+  width: 300%;
+  height: 300%;
+  position: absolute;
+  z-index: -1;
+  animation: shine 3s infinite ease-in;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(58, 108, 244, 0.2) 50%,
+    rgba(128, 186, 232, 0) 99%,
+    rgba(128, 186, 232, 0) 100%
+  );
+}
